@@ -1,3 +1,12 @@
+file names are LOT10, LOT144, LOT32, LOT232, LOT79, LOT308, LOT344, LOT5, White_Sofa_Smooth_Fabric, Recline_Sofa, LOT17, LOT119, LOT307, LOT311,LOT284 
+
+pass path like /modelname
+
+example : - http://localhost:3000/LOT284
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
