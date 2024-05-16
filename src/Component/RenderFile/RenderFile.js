@@ -22,7 +22,7 @@ import Recline_Sofa from "../../assets/Recline_Sofa.glb"
 import White_Sofa_Smooth_Fabric from "../../assets/White_Sofa_Smooth_Fabric.glb"
 import { Html } from "@react-three/drei";
 
-const pathlist = { LOT10, LOT144, LOT32, LOT232, LOT79, LOT308, LOT344, LOT5, White_Sofa_Smooth_Fabric, Recline_Sofa, LOT17, LOT119, LOT307, LOT311,LOT284 }
+const pathlist = { LOT10, LOT144, LOT32, LOT232, LOT79, LOT308, LOT344, LOT5, White_Sofa_Smooth_Fabric, Recline_Sofa, LOT17, LOT119, LOT307, LOT311, LOT284 }
 
 
 const RenderFile = () => {
@@ -33,6 +33,7 @@ const RenderFile = () => {
   const [loading, setLoading] = useState(true);
 
   const [path, setpath] = useState(null)
+  const [smallsize, setsmallsize] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -48,11 +49,20 @@ const RenderFile = () => {
       ImportedFileref.current.rotation.y += delta
     })
 
+    const width = document.body.offsetWidth
 
+    useEffect(() => {
+      if (width < 576) {
+        // console.log(width);
+        setsmallsize(true)
+      } else {
+        setsmallsize(false)
+      }
+    }, [width])
     return (
       <>
         <primitive
-          // scale={[.3,.3,.3]}
+          scale={smallsize ?[.5,.5,.5]:[1,1,1]}
           object={scene} ref={ImportedFileref} />
       </>
     )
@@ -77,15 +87,15 @@ const RenderFile = () => {
         : (pathlist[path]) ?
           <Canvas className="h-100 w-100" >
             <Suspense fallback={<Html className="h-100 w-100 d-flex">
-            {/* <span className="m-auto text-light text-center">Can't Find The Model/Error Loading the Model Plese Relode The Page Or Check the Model Name</span> */}
-            <ClipLoader
-            className="m-auto"
-            color="#ffffff"
-            loading={loading}
-            size={150}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
+              {/* <span className="m-auto text-light text-center">Can't Find The Model/Error Loading the Model Plese Relode The Page Or Check the Model Name</span> */}
+              <ClipLoader
+                className="m-auto"
+                color="#ffffff"
+                loading={loading}
+                size={150}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
             </Html>}>
               <OrbitControls />
               {/* <Environment files={} /> */}
