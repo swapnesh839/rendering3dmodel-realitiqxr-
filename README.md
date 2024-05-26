@@ -1,4 +1,4 @@
-file names are LOT10, LOT144, LOT32, LOT232, LOT79, LOT308, LOT344, LOT5, White_Sofa_Smooth_Fabric, Recline_Sofa, LOT17, LOT119, LOT307, LOT311,LOT284 
+file names are Model,LOT10,Headphone3M, LOT144, LOT32, LOT232, LOT79, LOT308, LOT344, LOT5, White_Sofa_Smooth_Fabric, Recline_Sofa, LOT17, LOT119, LOT307, LOT311,LOT284 
 
 pass path like /modelname
 

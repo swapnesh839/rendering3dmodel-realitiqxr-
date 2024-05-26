@@ -18,11 +18,13 @@ import LOT119 from "../../assets/Lot119.glb"
 import LOT307 from "../../assets/Lot307.glb"
 import LOT311 from "../../assets/Lot311.glb"
 import LOT284 from "../../assets/LOT284.glb"
+import Headphone3M from "../../assets/Headphone3M.glb"
+import Model from "../../assets/Model.glb"
 import Recline_Sofa from "../../assets/Recline_Sofa.glb"
 import White_Sofa_Smooth_Fabric from "../../assets/White_Sofa_Smooth_Fabric.glb"
 import { Html } from "@react-three/drei";
 
-const pathlist = { LOT10, LOT144, LOT32, LOT232, LOT79, LOT308, LOT344, LOT5, White_Sofa_Smooth_Fabric, Recline_Sofa, LOT17, LOT119, LOT307, LOT311, LOT284 }
+const pathlist = {Model,LOT10,Headphone3M, LOT144, LOT32, LOT232, LOT79, LOT308, LOT344, LOT5, White_Sofa_Smooth_Fabric, Recline_Sofa, LOT17, LOT119, LOT307, LOT311, LOT284 }
 
 
 const RenderFile = () => {
