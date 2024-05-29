@@ -23,19 +23,25 @@ import Model from "../../assets/Model.glb"
 import Recline_Sofa from "../../assets/Recline_Sofa.glb"
 import White_Sofa_Smooth_Fabric from "../../assets/White_Sofa_Smooth_Fabric.glb"
 import { Html } from "@react-three/drei";
+import { useParams } from "react-router-dom";
 
-const pathlist = {Model,LOT10,Headphone3M, LOT144, LOT32, LOT232, LOT79, LOT308, LOT344, LOT5, White_Sofa_Smooth_Fabric, Recline_Sofa, LOT17, LOT119, LOT307, LOT311, LOT284 }
+const pathlist = { Model, LOT10, Headphone3M, LOT144, LOT32, LOT232, LOT79, LOT308, LOT344, LOT5, White_Sofa_Smooth_Fabric, Recline_Sofa, LOT17, LOT119, LOT307, LOT311, LOT284 }
+
 
 
 const RenderFile = () => {
-  useLayoutEffect(() => {
-    const id = window.location.pathname.split("/")[1];
-    setpath(id);
-  }, [window.location.pathname]);
-  const [loading, setLoading] = useState(true);
-
   const [path, setpath] = useState(null)
   const [smallsize, setsmallsize] = useState(false)
+  const { model } = useParams()
+  useLayoutEffect(() => {
+    if (model) {
+      setpath(model);
+    } else {
+      setpath("LOT144");
+    }
+  }, [model]);
+
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -64,7 +70,7 @@ const RenderFile = () => {
     return (
       <>
         <primitive
-          scale={smallsize ?[.5,.5,.5]:[1,1,1]}
+          scale={smallsize ? [.5, .5, .5] : [1, 1, 1]}
           object={scene} ref={ImportedFileref} />
       </>
     )
